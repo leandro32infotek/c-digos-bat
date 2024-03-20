@@ -1,0 +1,16 @@
+@echo off
+set "Origem=****"
+set "Destino=****"
+
+echo Realizando cópia de segurança...
+
+:: Verificando se o diretório de destino existe, se não, criá-lo
+if not exist "%Destino%" (
+    mkdir "%Destino%"
+)
+
+:: Copiando os arquivos e substituindo os existentes
+xcopy /E /Y "%Origem%\*" "%Destino%"
+
+echo Cópia de segurança concluída.
+pause
